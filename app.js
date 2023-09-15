@@ -1,12 +1,27 @@
 import { geocode } from "./utils/geocode.mjs";
 import { forecast } from "./utils/forecast.mjs";
+import chalk from "chalk";
 
-geocode("San Francisco", (error, response) => {
-    error && console.log({ call: "geocode", error });
-    response && console.log({ call: "geocode", response });
-});
+const location = process.argv[2];
 
-forecast(34.122, -12.44, (error, response) => {
-    error && console.log({ call: "forecast", error });
-    response && console.log({ call: "forecast", response });
-});
+if (location) {
+    geocode(location, (error, geoResponse) => {
+        if (error) {
+            return console.log(error);
+        }
+
+        forecast(
+            geoResponse.latitude,
+            geoResponse.longitude,
+            (error, forecastResponse) => {
+                if (error) {
+                    return console.log(error);
+                }
+                console.log(chalk.green.inverse(geoResponse.city));
+                console.log(forecastResponse);
+            }
+        );
+    });
+} else {
+    console.log(chalk.red.inverse("Please provide a location"));
+}

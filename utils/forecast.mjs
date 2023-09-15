@@ -12,7 +12,7 @@ export const forecast = (latitude, longitude, callback) => {
             const { current } = response.body;
             callback(
                 undefined,
-                `The current temperature is ${current.temperature}°C, it feels like ${current.feelslike}°C. The humidity is ${current.humidity}% and there's ${current.precip}% chances of rain`
+                `The current temperature is ${current.temperature}°C, it feels like ${current.feelslike}°C. The humidity is ${current.humidity}% and there's ${current.precip}% chances of rain.`
             );
         }
     });
