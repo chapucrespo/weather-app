@@ -1,18 +1,12 @@
 import express from "express";
+import path from "path";
+import * as url from "url";
+
+const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
+const staticUrl = path.join(__dirname, "../public");
 
 const app = express();
-
-app.get("", (req, res) => {
-    res.send("Hello Express");
-});
-
-app.get("/help", (req, res) => {
-    res.send("Help page");
-});
-
-app.get("/about", (req, res) => {
-    res.send("<h1>About Page</h1>");
-});
+app.use(express.static(staticUrl));
 
 app.get("/weather", (req, res) => {
     res.send({
