@@ -3,11 +3,13 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>About Page</title>
-        <link rel="stylesheet" href="./css/styles.css" />
+        <title>{{tab}}</title>
+        <link rel="stylesheet" href="/css/styles.css" />
+        <script src="/js/app.js"></script>
     </head>
     <body>
-        <h1>Static About Page</h1>
-        <img src="./assets/messi.JPG" />
+        {{>header}}
+        <p>{{paragraph}}</p>
     </body>
+    {{>footer}}
 </html>

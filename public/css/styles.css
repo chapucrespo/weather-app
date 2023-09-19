@@ -1,7 +1,20 @@
-h1 {
+h1,
+.footer-text {
     color: palevioletred;
+    text-align: center;
 }
 
 img {
     width: 28.125rem;
+}
+
+navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+navbar > a {
+    text-decoration: none;
 }
