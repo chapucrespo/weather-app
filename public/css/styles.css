@@ -1,7 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap");
+
+:root {
+    --eerie-black: #1c1c1c;
+    --platinum: #daddd8;
+    --maize: #f7e94f;
+    --anti-flash-white: #eef0f2;
+    --zorba: #8f918d;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0 auto;
+    font-family: "Work Sans", sans-serif;
+    color: var(--eerie-black);
+    font-weight: 300;
+    background-color: var(--platinum);
+
+    min-height: 100vh;
+}
+
 h1,
 .footer-text {
-    color: palevioletred;
-    text-align: center;
+    font-weight: 600;
 }
 
 img {
@@ -13,8 +33,78 @@ navbar {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    margin-bottom: 2rem;
 }
 
 navbar > a {
     text-decoration: none;
+}
+
+.rounded-corners {
+    border-radius: 25px;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.main-content {
+    flex-grow: 1;
+    height: auto;
+    margin: auto;
+    padding: 10px;
+    width: 90vw;
+}
+
+.dark-background {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
+    background-color: var(--zorba);
+    background-image: url("../assets/topography.svg");
+    height: 90vh;
+    padding: 0.3125rem;
+    box-shadow: 4px 4px 6px -3px var(--eerie-black);
+}
+
+/* rounded forecast container */
+#forecast-container {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    justify-content: space-evenly;
+    max-width: 12.5rem;
+    margin: 2rem 2rem 0 2rem;
+    width: auto;
+}
+
+#location-div {
+    /* bottom: 50%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.125rem;
+    border-radius: 0.5rem;
+    background-color: var(--maize);
+    margin: 1rem;
+    width: 12.5rem;
+}
+
+#forecast-container > div {
+    display: flex;
+    align-items: center;
+    height: 3.125rem;
+    border-radius: 0.5rem;
+    background-color: var(--maize);
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 400;
+    box-shadow: 4px 4px 6px -3px var(--eerie-black);
+    position: relative;
+}
+
+@media screen and (max-width: 480px) {
+    .linear-background {
+        width: 90%;
+    }
 }

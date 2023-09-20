@@ -24,6 +24,10 @@ app.get("", (req, res) => {
     res.render("index", {
         tab: "Weather app",
         title: "Welcome to my app",
+        location: "Los Angeles",
+        humidity: "80%",
+        rain: "20%",
+        wind: "200",
     });
 });
 
@@ -54,6 +58,18 @@ app.get("/weather", (req, res) => {
                 rain: "0%",
             },
         ],
+    });
+});
+
+app.get("/help/*", (req, res) => {
+    res.render("error", {
+        errorMessage: "help article not found",
+    });
+});
+
+app.get("*", (req, res) => {
+    res.render("error", {
+        errorMessage: "404 page not found",
     });
 });
 
