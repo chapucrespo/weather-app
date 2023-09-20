@@ -58,49 +58,54 @@ navbar > a {
 
 .dark-background {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap-reverse;
     background-color: var(--zorba);
     background-image: url("../assets/topography.svg");
     height: 90vh;
     padding: 0.3125rem;
     box-shadow: 4px 4px 6px -3px var(--eerie-black);
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
 }
 
 /* rounded forecast container */
 #forecast-container {
     display: flex;
     flex-direction: column;
-    height: 50%;
-    justify-content: space-evenly;
-    max-width: 12.5rem;
-    margin: 2rem 2rem 0 2rem;
-    width: auto;
+    justify-content: flex-end;
 }
 
-#location-div {
-    /* bottom: 50%; */
+#location-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 3.125rem;
-    border-radius: 0.5rem;
-    background-color: var(--maize);
-    margin: 1rem;
-    width: 12.5rem;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-#forecast-container > div {
-    display: flex;
-    align-items: center;
+.styled-div {
     height: 3.125rem;
     border-radius: 0.5rem;
     background-color: var(--maize);
     padding: 0.5rem;
     font-size: 1.25rem;
-    font-weight: 400;
+    font-weight: 600;
     box-shadow: 4px 4px 6px -3px var(--eerie-black);
+    display: flex;
+    align-items: center;
     position: relative;
+    margin: 1rem;
+}
+
+.temperature-div {
+    height: 12.5rem;
+    width: 12.5rem;
+    background-color: var(--maize);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 2.5rem;
+    margin: 1rem;
+    box-shadow: 4px 4px 6px -3px var(--eerie-black);
 }
 
 @media screen and (max-width: 480px) {

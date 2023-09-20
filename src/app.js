@@ -25,6 +25,7 @@ app.get("", (req, res) => {
         tab: "Weather app",
         title: "Welcome to my app",
         location: "Los Angeles",
+        temperature: "30°C",
         humidity: "80%",
         rain: "20%",
         wind: "200",
