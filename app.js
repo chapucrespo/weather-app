@@ -1,5 +1,5 @@
-import { geocode } from "./utils/geocode.js";
-import { forecast } from "./utils/forecast.js";
+import { geocode } from "./utils/geocode.mjs";
+import { forecast } from "./utils/forecast.mjs";
 import chalk from "chalk";
 
 const location = process.argv[2];

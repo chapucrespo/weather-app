@@ -2,6 +2,8 @@ import express from "express";
 import path from "path";
 import hbs from "hbs";
 import * as url from "url";
+import { geocode } from '../utils/geocode.mjs'
+import {forecast} from '../utils/forecast.mjs'
 
 //Paths
 const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
@@ -50,17 +52,30 @@ app.get("/about", (req, res) => {
 
 //static weather, returns JSON
 app.get("/weather", (req, res) => {
-    res.send({
-        location: "Santa Fe",
-        forecast: [
-            {
-                temperature: "20 degrees",
-                humidity: "70%",
-                rain: "0%",
-            },
-        ],
-    });
+    if(!req.query.location) {
+        return res.send('You must provide a location')
+    } 
+
+    geocode(req.query.location, (error, {latitude, longitude, city}) => {
+        if(error) {
+            return res.send({error})
+        } else {
+            forecast(latitude, longitude, (error, forecastData) => {
+                const {temperature, feelslike, humidity, precip, weather_descriptions } = forecastData;
+                if(error) {
+                    return res.send({error})
+                } else {
+                    return res.send(`You're in ${city}. 
+                    The day is ${weather_descriptions}, with a temperature of ${temperature}°.
+                    It feels like like ${feelslike}. 
+                    There's a ${precip}% chances of rain and ${humidity}% of humidity`)
+                }
+            })
+        }
+    })
 });
+
+debugger
 
 app.get("/help/*", (req, res) => {
     res.render("error", {
