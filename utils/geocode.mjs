@@ -5,12 +5,10 @@ export const geocode = (address, callback) => {
 
     request({ url: url, json: true }, (error, response) => {
         const { data } = response.body;
-        debugger
-        if (error) {
-            callback(error);
-        } else if (data.length == 0) {
-            callback(`We couldn't find the address, try again`);
+        if (error || data.length == 0) {
+            callback(error ? 'An error ocurred, try again' : `We couldn't find the location, try again`);
         } else {
+            console.log('else')
             callback(undefined, {
                 latitude: data[0].latitude,
                 longitude: data[0].longitude,
