@@ -64,7 +64,7 @@ navbar > a {
     padding: 0.3125rem;
     box-shadow: 4px 4px 6px -3px var(--eerie-black);
     justify-content: space-between;
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
 }
 
 /* rounded forecast container */
@@ -78,6 +78,10 @@ navbar > a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    p {
+        text-align: center;
+    }
 }
 
 .styled-div {
@@ -90,6 +94,7 @@ navbar > a {
     box-shadow: 4px 4px 6px -3px var(--eerie-black);
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
     margin: 1rem;
 }
@@ -111,5 +116,36 @@ navbar > a {
 @media screen and (max-width: 480px) {
     .linear-background {
         width: 90%;
+        height: 100%;
     }
+
+    .dark-background {
+        height: 100%;
+        width: 90%
+    }
+}
+
+#location {
+    margin: 1rem 0 0 1rem;
+}
+
+input {
+    border: 1px solid yellow;
+    padding: 0.5rem;
+}
+
+input:focus {
+    outline: 2px solid royalblue;
+    box-shadow: 1px 1px 8px 1px royalblue;
+}
+
+button {
+    padding: 0.5rem;
+    border: 1px solid yellow;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }

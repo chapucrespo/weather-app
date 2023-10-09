@@ -34,14 +34,6 @@ app.get("", (req, res) => {
     });
 });
 
-app.get("/help", (req, res) => {
-    res.render("help", {
-        tab: "Help section",
-        title: "Need help?",
-        paragraph: "Contact me on github",
-    });
-});
-
 app.get("/about", (req, res) => {
     res.render("about", {
         tab: "About this page",
@@ -74,8 +66,6 @@ app.get("/weather", (req, res) => {
         }
     })
 });
-
-debugger
 
 app.get("/help/*", (req, res) => {
     res.render("error", {
