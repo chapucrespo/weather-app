@@ -22,7 +22,7 @@ setInitialText(selectorsArr)
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
     temperatureP.textContent = 'Loading...'
-    const url = `http://api.weatherstack.com/current?access_key=3a23847a32b8510cae16e7016c5c125d&query=${address.value}`
+    const url = `http://api.weatherstack.com/current?access_key=7b07c95e82399782dd4d739ec152f583&query=${address.value}`
     
     fetch(url).then((response) => {
         response.json().then((data) => {
