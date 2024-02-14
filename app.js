@@ -1,8 +1,27 @@
-import request from "postman-request";
+import { geocode } from "./utils/geocode.mjs";
+import { forecast } from "./utils/forecast.mjs";
+import chalk from "chalk";
 
-const url =
-    "http://api.weatherstack.com/current?access_key=3a23847a32b8510cae16e7016c5c125d&query=Buenos%20Aires";
+const location = process.argv[2];
 
-request({ url: url }, (error, response) => {
-    console.log(response);
-});
+if (location) {
+    geocode(location, (error, geoResponse) => {
+        if (error) {
+            return console.log(error);
+        }
+
+        forecast(
+            geoResponse.latitude,
+            geoResponse.longitude,
+            (error, forecastResponse) => {
+                if (error) {
+                    return console.log(error);
+                }
+                console.log(chalk.green.inverse(geoResponse.city));
+                console.log(forecastResponse);
+            }
+        );
+    });
+} else {
+    console.log(chalk.red.inverse("Please provide a location"));
+}

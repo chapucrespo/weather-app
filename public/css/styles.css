@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap");
+
+:root {
+    --eerie-black: #1c1c1c;
+    --platinum: #daddd8;
+    --maize: #f7e94f;
+    --anti-flash-white: #eef0f2;
+    --zorba: #8f918d;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0 auto;
+    font-family: "Work Sans", sans-serif;
+    color: var(--eerie-black);
+    font-weight: 300;
+    background-color: var(--platinum);
+
+    min-height: 100vh;
+}
+
+h1,
+.footer-text {
+    font-weight: 600;
+}
+
+img {
+    width: 28.125rem;
+}
+
+navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+}
+
+navbar > a {
+    text-decoration: none;
+}
+
+.rounded-corners {
+    border-radius: 25px;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.main-content {
+    flex-grow: 1;
+    height: auto;
+    margin: auto;
+    padding: 10px;
+    width: 90vw;
+}
+
+.dark-background {
+    display: flex;
+    background-color: var(--zorba);
+    background-image: url("../assets/topography.svg");
+    height: 90vh;
+    padding: 0.3125rem;
+    box-shadow: 4px 4px 6px -3px var(--eerie-black);
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* rounded forecast container */
+#forecast-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#location-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    p {
+        text-align: center;
+    }
+}
+
+.styled-div {
+    height: 3.125rem;
+    border-radius: 0.5rem;
+    background-color: var(--maize);
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    box-shadow: 4px 4px 6px -3px var(--eerie-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 1rem;
+}
+
+.temperature-div {
+    height: 12.5rem;
+    width: 12.5rem;
+    background-color: var(--maize);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 2.5rem;
+    margin: 1rem;
+    box-shadow: 4px 4px 6px -3px var(--eerie-black);
+}
+
+@media screen and (max-width: 480px) {
+    .linear-background {
+        width: 90%;
+        height: 100%;
+    }
+
+    .dark-background {
+        height: 100%;
+        width: 90%
+    }
+}
+
+#location {
+    margin: 1rem 0 0 1rem;
+}
+
+input {
+    border: 1px solid yellow;
+    padding: 0.5rem;
+}
+
+input:focus {
+    outline: 2px solid royalblue;
+    box-shadow: 1px 1px 8px 1px royalblue;
+}
+
+button {
+    padding: 0.5rem;
+    border: 1px solid yellow;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
